@@ -7,6 +7,9 @@ var imageNames = [
 ];
 var allImages = [];
 var totalClicks = 0;
+var displayNumber = 3;
+var lastShown = [];
+var globalRandomImages = [];
 
 console.table(imageNames);
 
@@ -38,15 +41,22 @@ function render(){
     imagesSection.innerHTML = "";
 
     var randomImages = [];
-    randomImages.push(randomImage());
-    randomImages.push(randomImage());
-    randomImages.push(randomImage());
-    while(randomImages[0] === randomImages[1]){
-        randomImages[1] = randomImage();
+    for(var i = 0; i < displayNumber; i++){
+        var image = randomImage();
+        while(randomImages.includes(image) || lastShown.includes(image)){
+            image = randomImage();
+        }
+        randomImages.push(image);
     }
-    while(randomImages[2] === randomImages[1] || randomImages[2] === randomImages[0]){
-        randomImages[2] = randomImage();
-    }
+    // randomImages.push(randomImage());
+    // randomImages.push(randomImage());
+    // randomImages.push(randomImage());
+    // while(randomImages[0] === randomImages[1]){
+    //     randomImages[1] = randomImage();
+    // }
+    // while(randomImages[2] === randomImages[1] || randomImages[2] === randomImages[0]){
+    //     randomImages[2] = randomImage();
+    // }
 
     for(var i = 0; i < 3; i++){
         allImages[randomImages[i]].views++;
@@ -57,6 +67,7 @@ function render(){
         img.addEventListener("click", handleVote);
         imagesSection.appendChild(img);
     }
+    globalRandomImages = randomImages;
 }
 
 function handleVote(event){
@@ -66,6 +77,7 @@ function handleVote(event){
         if(allImages[i].name === imageName){
             allImages[i].clicks++;
             totalClicks++;
+            lastShown = globalRandomImages;
             render();
         }
     }
@@ -91,6 +103,26 @@ function showResults(){
     }
     results.appendChild(ul);
 }
+
+var ctx = document.getElementById('canvas').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: imageNames[2],
+        datasets: [{
+            label: 'Results',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: imageNames[2].totalClicks
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
 
 showResults();
 createImages();
