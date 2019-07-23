@@ -3,7 +3,7 @@
 var imageNames = [
     ["bag", "banana", "bathroom", "boots", "breakfast", "bubblegum", "chair", "cthulhu", "dogDuck", "dragon", "pen", "petSweep", "scissors", "shark", "sweep", "tauntaun", "unicorn", "usb", "waterCan", "wineGlass"],
     ["bag.jpg", "banana.jpg", "bathroom.jpg", "boots.jpg", "breakfast.jpg", "bubblegum.jpg", "chair.jpg", "cthulhu.jpg", "dog-duck.jpg", "dragon.jpg", "pen.jpg", "pet-sweep.jpg", "scissors.jpg", "shark.jpg", "sweep.png", "tauntaun.jpg", "unicorn.jpg", "usb.gif", "water-can.jpg", "wine-glass.jpg"],
-    ["Star Wars Bag", "Banana Slicer", "Bathroom TP and Tablet Holder", "All-in-One Breakfast Machine", "Meatball Bubblegum", "Bubble Chair", "Cthulhu", "Dog w/ Duck Mask", "Dragon Meat", "Silverware Pens", "Pet Sweeper Shoes", "Pizza Scissors", "Shark Sleeping Bag", "Baby Sweeper Outfit", "Star Wars Sleeping Bag", "Unicorn Meat", "Tentacle USB", "Illogical Watering Can", "Illogical Wine Glass"]
+    ["Star Wars Sleeping Bag", "Banana Slicer", "Bathroom TP and Tablet Holder", "Boots w/ Hole for Toes", "All-in-One Breakfast Machine", "Meatball Bubblegum", "Bubble Chair", "Cthulhu", "Dog w/ Duck Mask", "Dragon Meat", "Silverware Pens", "Pet Sweeper Shoes", "Pizza Scissors", "Shark Sleeping Bag", "Baby Sweeper Outfit", "Star Wars Sleeping Bag", "Unicorn Meat", "Tentacle USB", "Illogical Watering Can", "Illogical Wine Glass"]
 ];
 var allImages = [];
 var totalClicks = 0;
