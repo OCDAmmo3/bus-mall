@@ -1,0 +1,38 @@
+body {
+    background-color:rgb(94, 157, 224);
+}
+#products {
+    box-sizing:border-box;
+    padding:10px;
+    max-width:70%;
+    float:left;
+    margin-top:30px;
+}
+img {
+    border:solid black 1px;
+    max-width:33%;
+    box-sizing:border-box;
+    float:left;
+}
+img:first-child {
+    margin-right:.5%;
+}
+img:last-child {
+    margin-left:.5%;
+}
+#results {
+    float:right;
+    width:30%;
+    box-sizing:border-box;
+    margin-top:30px;
+    font-size:18px;
+}
+#results ul {
+    list-style:none;
+    font-family:sans-serif;
+    line-height:1.4;
+}
+#results h2 {
+    text-align:center;
+    margin-left:-10px;
+}
