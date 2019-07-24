@@ -98,19 +98,33 @@ function handleVote(event){
     console.table(allImages);
     console.log("Total Clicks", totalClicks);
 }
-function getRandomRgba() {
-    var num = Math.round(0xffffff * Math.random());
-    var r = num >> 16;
-    var g = num >> 8 & 255;
-    var b = num & 255;
+// function getRandomRgba() {
+//     var num = Math.round(0xffffff * Math.random());
+//     var r = num >> 16;
+//     var g = num >> 8 & 255;
+//     var b = num & 255;
+//     return `rgba(${r},${g},${b},.4)`;
+// }
+// function getRandomRgb() {
+//     var num = Math.round(0xffffff * Math.random());
+//     var r = num >> 16;
+//     var g = num >> 8 & 255;
+//     var b = num & 255;
+//     return `rgb(${r},${g},${b})`;
+// }
+function getRandomRgba(){
+    var r = Math.round(255*Math.random());
+    var g = Math.round(255*Math.random());
+    var b = Math.round(255*Math.random());
+    console.log(r,g,b);
     return `rgba(${r},${g},${b},.4)`;
 }
-function getRandomRgb() {
-    var num = Math.round(0xffffff * Math.random());
-    var r = num >> 16;
-    var g = num >> 8 & 255;
-    var b = num & 255;
-    return `rgb(${r},${g},${b})`;
+
+function getRandomRgb(){
+    var r = Math.round(255*Math.random());
+    var g = Math.round(255*Math.random());
+    var b = Math.round(255*Math.random());
+    return `rgba(${r},${g},${b})`;
 }
 function createChart(ctx, labels, dataLabel, data) {
     var canvas = new Chart(ctx, {
