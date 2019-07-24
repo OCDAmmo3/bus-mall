@@ -4,15 +4,20 @@ body {
 #products {
     box-sizing:border-box;
     padding:10px;
-    max-width:70%;
-    float:left;
+    padding-right:0px;
+    max-width:100%;
     margin-top:30px;
+    min-height:750px;
 }
 img {
+    background-color:white;
+    max-width:100%;
     border:solid black 1px;
-    max-width:33%;
     box-sizing:border-box;
     float:left;
+    padding:3%;
+    border-radius:10%;
+    max-height:100%;
 }
 img:first-child {
     margin-right:.5%;
@@ -22,10 +27,19 @@ img:last-child {
 }
 #results {
     float:right;
-    width:30%;
+    width:100%;
     box-sizing:border-box;
     margin-top:30px;
     font-size:18px;
+    background-color:grey;
+    padding:20px;
+    min-height:70%;
+    border-radius:10px;
+    border:solid black 1px;
+    color:white;
+    max-width:80%;
+    margin-left:10%;
+    margin-right:10%;
 }
 #results ul {
     list-style:none;
@@ -35,4 +49,15 @@ img:last-child {
 #results h2 {
     text-align:center;
     margin-left:-10px;
+}
+#canvas {
+    background-color:lightGrey;
+    border-radius:10px;
+    border:solid black 1px;
+}
+.imgDiv {
+    float:left;
+    width: 30%;
+    height: 400px;
+    margin:1%;
 }
