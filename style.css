@@ -7,7 +7,6 @@ body {
     padding-right:0px;
     max-width:100%;
     margin-top:30px;
-    min-height:500px;
 }
 img {
     background-color:white;
@@ -26,10 +25,11 @@ img:last-child {
     margin-left:.5%;
 }
 #results {
+    font-family:sans-serif;
     float:right;
     width:100%;
     box-sizing:border-box;
-    margin-top:30px;
+    /* margin-top:30px; */
     font-size:18px;
     background-color:grey;
     padding:20px;
@@ -38,8 +38,9 @@ img:last-child {
     border:solid black 1px;
     color:white;
     max-width:80%;
-    margin-left:10%;
-    margin-right:10%;
+    /* margin-left:10%;
+    margin-right:10%; */
+    margin:30px 10% 40px 10%;
 }
 #results ul {
     list-style:none;
@@ -60,4 +61,28 @@ img:last-child {
     width: 30%;
     height: 450px;
     margin:1%;
+}
+#resetButton {
+    padding:5px 0px 5px 0px;
+    border:black solid 1px;
+    font-size:14px;
+    background-color:lightGrey;
+    margin-left:44%;
+    margin-right:44%;
+    border-radius:5px;
+    margin-bottom:10px;
+}
+#resetButton:hover {
+    opacity:.6;
+    border:black solid 1px;
+}
+#resetButton a {
+    letter-spacing:.5px;
+    font-weight:bold;
+    padding:8px 15px 8px 15px;
+    text-decoration:none;
+    color:black;
+}
+#resetButton a:hover {
+    color:;
 }

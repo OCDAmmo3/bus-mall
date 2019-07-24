@@ -1,5 +1,19 @@
 "use strict";
 
+// window.addEventListener("load", function onLoad() {
+//     loadFromStorage();
+
+//     if (Image.all.length === 0) {
+//         initialize();
+//     }
+//     render();
+// });
+
+function storeResults() {
+    localStorage["Image"] = JSON.stringify(Image.allImages);
+}
+console.log(localStorage);
+
 var imageNames = [
     ["bag", "banana", "bathroom", "boots", "breakfast", "bubblegum", "chair", "cthulhu", "dogDuck", "dragon", "pen", "petSweep", "scissors", "shark", "sweep", "tauntaun", "unicorn", "usb", "waterCan", "wineGlass"],
     ["bag.jpg", "banana.jpg", "bathroom.jpg", "boots.jpg", "breakfast.jpg", "bubblegum.jpg", "chair.jpg", "cthulhu.jpg", "dog-duck.jpg", "dragon.jpg", "pen.jpg", "pet-sweep.jpg", "scissors.jpg", "shark.jpg", "sweep.png", "tauntaun.jpg", "unicorn.jpg", "usb.gif", "water-can.jpg", "wine-glass.jpg"],
@@ -66,7 +80,7 @@ function render(){
         allImages[randomImages[i]].views++;
         var imgDiv = document.createElement("div");
         imgDiv.classList.add("imgDiv");
-                var img = document.createElement("img");
+        var img = document.createElement("img");
         img.setAttribute("name", allImages[randomImages[i]].description);
         img.setAttribute("src", allImages[randomImages[i]].imageURL);
         img.setAttribute("data-name", allImages[randomImages[i]].name);
@@ -79,7 +93,7 @@ function render(){
 
 function handleVote(event){
     var imageName = event.target.dataset.name;
-    console.log(imageName);
+    // console.log(imageName);
     for(var i = 0; i < allImages.length; i++){
         if(allImages[i].name === imageName){
             allImages[i].clicks++;
@@ -94,6 +108,7 @@ function handleVote(event){
             imgs[i].removeEventListener("click", handleVote);
         }
         showResults();
+        storeResults();
     }
     console.table(allImages);
     console.log("Total Clicks", totalClicks);
@@ -117,7 +132,6 @@ function getRandomRgba(){
     var r = Math.round(255*Math.random());
     var g = Math.round(255*Math.random());
     var b = Math.round(255*Math.random());
-    console.log(r,g,b);
     return `rgba(${r},${g},${b},.4)`;
 }
 function getRandomRgb(){
@@ -137,7 +151,7 @@ function createChart(ctx, labels, dataLabel, data) {
                 data: data,
                 backgroundColor: colors,
                 borderColor: colors2,
-                borderWidth: 3
+                borderWidth: 2
             }]
         },
         options: {
@@ -169,5 +183,29 @@ function showResults(){
     results.appendChild(canvas);
 }
 
+function storeResults() {
+    localStorage.setItem("allImages", JSON.stringify(allImages))
+    console.log(localStorage.allImages);
+}
+function callStorage(){
+    var storage = localStorage["allImages"];
+    if(storage){
+        allImages = JSON.parse(storage);
+        showResults();
+    } else{
+        return;
+    }
+    imgs[i].removeEventListener("click", handleVote);
+}
+
+var resetButton = document.querySelector('button[type="reset"]');
+resetButton.addEventListener("click", function resetClick(event){
+    console.log("reset click", event);
+    localStorage.clear();
+    render();
+    createImages();
+});
+
 createImages();
+callStorage();
 render();
