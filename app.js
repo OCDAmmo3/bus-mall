@@ -112,6 +112,7 @@ function handleVote(event){
 //     var b = num & 255;
 //     return `rgb(${r},${g},${b})`;
 // }
+
 function getRandomRgba(){
     var r = Math.round(255*Math.random());
     var g = Math.round(255*Math.random());
@@ -119,13 +120,13 @@ function getRandomRgba(){
     console.log(r,g,b);
     return `rgba(${r},${g},${b},.4)`;
 }
-
 function getRandomRgb(){
     var r = Math.round(255*Math.random());
     var g = Math.round(255*Math.random());
     var b = Math.round(255*Math.random());
     return `rgba(${r},${g},${b})`;
 }
+
 function createChart(ctx, labels, dataLabel, data) {
     var canvas = new Chart(ctx, {
         type: 'bar',
